@@ -1,0 +1,19 @@
+.navLink {
+  font-size: 20px;
+}
+
+.navLinkActive {
+  color: rgb(33, 189, 85);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.navLink:not(:last-child) {
+  margin-right: 15px;
+}
+.header {
+  box-shadow: 2px 2px 4px -1px rgba(0, 0, 0, 0.63);
+}

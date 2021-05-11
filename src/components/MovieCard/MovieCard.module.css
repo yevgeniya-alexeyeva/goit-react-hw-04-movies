@@ -1,0 +1,24 @@
+.moviePoster {
+  width: 250px;
+  padding: 10px;
+}
+.descrHolder {
+  display: flex;
+  width: 840px;
+}
+.movieCard {
+  border-bottom: 1px solid grey;
+}
+.navLink {
+  font-size: 20px;
+}
+
+.navLinkActive {
+  color: rgb(33, 189, 85);
+}
+.genres {
+  display: flex;
+}
+.genre:not(:last-child) {
+  margin-right: 5px;
+}
