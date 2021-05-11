@@ -1,6 +1,7 @@
 import { Link, withRouter } from "react-router-dom";
 
-const MovieList = ({ movies, location }) => {
+const MovieList = ({ movies, location, match }) => {
+  console.log(match);
   return (
     <ul>
       {movies.map((movie) => (
