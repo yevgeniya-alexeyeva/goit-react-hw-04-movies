@@ -5,6 +5,7 @@
 .descrHolder {
   display: flex;
   width: 840px;
+  margin-left: 10px;
 }
 .movieCard {
   border-bottom: 1px solid grey;

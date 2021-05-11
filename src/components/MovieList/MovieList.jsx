@@ -1,7 +1,7 @@
 import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const MovieList = ({ movies, location, match }) => {
-  console.log(match);
+const MovieList = ({ movies, location }) => {
   return (
     <ul>
       {movies.map((movie) => (
@@ -23,3 +23,7 @@ const MovieList = ({ movies, location, match }) => {
 };
 
 export default withRouter(MovieList);
+
+MovieList.propTypes = {
+  onSubmit: PropTypes.arrayOf(PropTypes.object),
+};

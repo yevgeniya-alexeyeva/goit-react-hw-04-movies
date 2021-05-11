@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styles from "./MovieCard.module.css";
 import posterNotFound from "../../images/posterNotFound.png";
+import PropTypes from "prop-types";
 
 const MovieCard = ({ id, imgUrl, title, userScore, overview, genres }) => {
   return (
@@ -58,3 +59,12 @@ const MovieCard = ({ id, imgUrl, title, userScore, overview, genres }) => {
   );
 };
 export default MovieCard;
+
+MovieCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  imgUrl: PropTypes.string,
+  title: PropTypes.string,
+  userScore: PropTypes.number,
+  overview: PropTypes.string,
+  genres: PropTypes.arrayOf(PropTypes.string),
+};
