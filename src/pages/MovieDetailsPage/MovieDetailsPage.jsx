@@ -24,6 +24,7 @@ class MovieDetailsPage extends Component {
     userScore: null,
     overview: null,
     genres: null,
+    prevLocation: null,
   };
 
   async componentDidMount() {
@@ -41,25 +42,46 @@ class MovieDetailsPage extends Component {
       }));
     } catch (error) {
       console.log(error);
+    } finally {
+      const { location } = this.props;
+      this.setState(() => ({
+        prevLocation: location?.state?.from,
+      }));
     }
   }
+
   handleGoBack = () => {
-    const { location, history } = this.props;
-    history.push(location?.state?.from || "/movies");
+    const { history } = this.props;
+    const { prevLocation } = this.state;
+
+    history.push(prevLocation);
   };
 
   render() {
-    const { id, imgUrl, title, userScore, overview, genres } = this.state;
+    const {
+      id,
+      imgUrl,
+      title,
+      userScore,
+      overview,
+      genres,
+      prevLocation,
+    } = this.state;
+    const { location } = this.props;
+    const { state } = location;
+
     return (
       <>
         <Header />
-        <button
-          type="button"
-          onClick={this.handleGoBack}
-          className={styles.button}
-        >
-          &#x02190; Go back
-        </button>
+        {(state?.from || prevLocation) && (
+          <button
+            type="button"
+            onClick={this.handleGoBack}
+            className={styles.button}
+          >
+            &#x02190; Go back
+          </button>
+        )}
 
         {this.state.id ? (
           <MovieCard

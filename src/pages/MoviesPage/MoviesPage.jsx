@@ -2,7 +2,6 @@ import { Component } from "react";
 import tmdbApi from "../../api/tmdb.api";
 import Header from "../../components/Header";
 import SearchBar from "../../components/SearchBar";
-// import PropTypes from "prop-types";
 import MovieList from "../../components/MovieList";
 
 class MoviesPage extends Component {
@@ -10,6 +9,7 @@ class MoviesPage extends Component {
     query: null,
     movies: null,
   };
+
   componentDidMount() {
     const {
       location: { search },

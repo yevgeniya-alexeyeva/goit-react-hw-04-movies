@@ -5,6 +5,7 @@ class Reviews extends Component {
   state = {
     reviewList: [],
   };
+
   async componentDidMount() {
     const id = this.props.match.params.movieId;
     try {
@@ -15,6 +16,7 @@ class Reviews extends Component {
       console.log(error);
     }
   }
+
   render() {
     const { reviewList } = this.state;
     return reviewList.length ? (

@@ -7,6 +7,7 @@ class Cast extends Component {
   state = {
     cast: [],
   };
+
   async componentDidMount() {
     const id = this.props.match.params.movieId;
     try {
@@ -17,6 +18,7 @@ class Cast extends Component {
       console.log(error);
     }
   }
+
   render() {
     const { cast } = this.state;
     return cast.length ? (
